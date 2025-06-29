@@ -2,6 +2,9 @@ import { createClient } from '@/lib/supabase/server'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Ship, Building2, Bell, Container, Users, TrendingUp } from 'lucide-react'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 async function getDashboardStats() {
   const supabase = await createClient()
 

@@ -1,5 +1,8 @@
 import ShipperForm from '@/components/forms/shipper-form'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 export default function NewShipperPage() {
   return (
     <div className="space-y-6">

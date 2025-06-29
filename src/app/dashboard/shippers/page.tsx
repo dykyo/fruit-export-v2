@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button'
 import { Plus, Edit, Trash2, Ship, Phone, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 async function getShippers() {
   const supabase = await createClient()
 

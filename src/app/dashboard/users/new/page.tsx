@@ -2,6 +2,9 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import UserForm from '@/components/forms/user-form'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 async function checkAdminAccess() {
   const supabase = await createClient()
 

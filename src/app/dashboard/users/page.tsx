@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button'
 import { Plus, Edit, Trash2, Shield, User } from 'lucide-react'
 import Link from 'next/link'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 async function getUsers() {
   const supabase = await createClient()
 
