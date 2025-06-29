@@ -84,7 +84,7 @@ export default function ConsigneeForm({ initialData, isEdit = false, consigneeId
 
       router.push('/dashboard/consignees')
       router.refresh()
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred')
     } finally {
       setLoading(false)

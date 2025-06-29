@@ -84,7 +84,7 @@ export default function NotifyPartyForm({ initialData, isEdit = false, notifyPar
 
       router.push('/dashboard/notify-parties')
       router.refresh()
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred')
     } finally {
       setLoading(false)

@@ -95,7 +95,7 @@ export default function UserForm({ initialData, isEdit = false, userId }: UserFo
 
       router.push('/dashboard/users')
       router.refresh()
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred')
     } finally {
       setLoading(false)

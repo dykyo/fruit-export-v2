@@ -105,7 +105,7 @@ export default function ContainerForm({ initialData, isEdit = false, containerId
 
       router.push('/dashboard/containers')
       router.refresh()
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred')
     } finally {
       setLoading(false)

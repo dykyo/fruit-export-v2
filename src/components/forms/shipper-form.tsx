@@ -81,7 +81,7 @@ export default function ShipperForm({ initialData, isEdit = false, shipperId }: 
 
       router.push('/dashboard/shippers')
       router.refresh()
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred')
     } finally {
       setLoading(false)
