@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fruit Export Management System
 
-## Getting Started
+A comprehensive web application for managing fruit export operations, built with Next.js 15 and Supabase.
 
-First, run the development server:
+## Features
+
+- **Authentication**: Secure login with Supabase Auth
+- **User Management**: Role-based access control (Admin/User)
+- **Data Management**: CRUD operations for:
+  - Shippers
+  - Consignees
+  - Notify Parties
+  - Containers
+- **Responsive Design**: Works seamlessly on mobile, tablet, and desktop
+- **Dashboard**: Key metrics and summary information
+
+## Tech Stack
+
+- **Frontend**: Next.js 15 with App Router, TypeScript, Tailwind CSS
+- **Backend**: Supabase (Database, Authentication, Real-time)
+- **UI Components**: Custom components with Lucide React icons
+- **Forms**: React Hook Form with Zod validation
+
+## Setup Instructions
+
+### 1. Clone and Install Dependencies
+
+```bash
+git clone <repository-url>
+cd fruit-export-v2
+npm install
+```
+
+### 2. Supabase Setup
+
+1. Create a new project at [supabase.com](https://supabase.com)
+2. Go to Project Settings > API to get your project URL and anon key
+3. Copy `.env.example` to `.env.local` and fill in your Supabase credentials:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+```
+
+### 3. Database Setup
+
+1. In your Supabase dashboard, go to the SQL Editor
+2. Copy and paste the contents of `supabase/schema.sql`
+3. Run the SQL to create all tables, policies, and sample data
+
+### 4. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Next.js App Router pages
+├── components/             # Reusable UI components
+├── lib/                   # Utility functions and configurations
+│   ├── supabase/          # Supabase client configurations
+│   └── utils.ts           # Utility functions
+└── types/                 # TypeScript type definitions
+```
 
-## Learn More
+## Authentication
 
-To learn more about Next.js, take a look at the following resources:
+The application uses Supabase Auth with the following features:
+- Email/password authentication
+- Automatic user profile creation
+- Role-based access control
+- Protected routes with middleware
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Database Schema
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The application includes the following main entities:
+- **Users**: User profiles with role-based permissions
+- **Shippers**: Export company information
+- **Consignees**: Import company information
+- **Notify Parties**: Notification contact information
+- **Containers**: Container tracking and management
 
-## Deploy on Vercel
+## Development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Adding New Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Create database tables in `supabase/schema.sql`
+2. Update TypeScript types in `src/types/database.ts`
+3. Create UI components in `src/components/`
+4. Add pages in `src/app/`
+
+### Testing
+
+```bash
+npm run test        # Run tests
+npm run test:watch  # Run tests in watch mode
+```
+
+## Deployment
+
+The application can be deployed to Vercel, Netlify, or any platform that supports Next.js.
+
+1. Connect your repository to your deployment platform
+2. Set environment variables in your deployment platform
+3. Deploy
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
